@@ -7,6 +7,7 @@ import com.empresa.service.EmpleadoService;
 import com.empresa.service.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,19 +17,19 @@ public class EmpleadoController {
 
     @Autowired
     EmpleadoService empleadoService;
-/*
+
     //-------------------post---------------------------------
 
-    @PostMapping("/o")
+    @PostMapping
     private void crearYActualizarEmpleado(@RequestBody Empleado empleado) {
         empleadoService.crearYActualizarEmpleado(empleado);
     }
-*/
-    //-----------------------get---------------------------------
 
-    @GetMapping("/o")
-    private List<Empleado> mostrarEmpleado() {
-        return empleadoService.verEmpleados();
+    //-----------------------get--------------------------------
+    @GetMapping
+    private String mostrarEmpleado(Model model) {
+        model.addAttribute("empleado", empleadoService.verEmpleados());
+        return "empleados";
     }
 /*
     //--------------------------delete--------------------------
@@ -44,6 +45,5 @@ public class EmpleadoController {
     private void atualizarEmpleado(@RequestBody Empleado empleado) {
         empleadoService.crearYActualizarEmpleado(empleado);
     }
-*/
-
+   */
 }
