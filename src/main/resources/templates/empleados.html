@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,5 +12,26 @@
 <h1 class="titulo">
     yo soy de mente millonaria, por esa razon soy millonario
 </h1>
+<table class="tabla">
+    <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Rol</th>
+        <th>Fecha de ingreo</th>
+        <th>Fecha de actualizaciones</th>
+        <th>Funcion</th>
+    </tr>
+
+    <tr th:each="listEmp : ${empleado}">
+        <td th:text="${listEmp.nombre}"></td>
+        <td th:text="${listEmp.correo}"></td>
+        <td th:text="${listEmp.rol}"></td>
+        <td th:text="${listEmp.fechaCreacionEmpleado}"></td>
+        <td th:text="${listEmp.fechaActualizacionEmpleado}"></td>
+        <td th:text="${listEmp.funcion}"></td>
+    </tr>
+</table>
+<a href="/agregar-emleado">Agregar nuevo empleado</a>
+
 </body>
 </html>

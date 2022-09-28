@@ -45,11 +45,11 @@ public class Empleado {
     @Enumerated(value=EnumType.STRING)
     private RolEnum funcion;
 
-    //-------------------relaciones uml-----------------
+  /*  //-------------------relaciones uml-----------------
 
     @ManyToOne
     private Empresa empresa;
 
     @OneToMany
-    private List<Transacciones> transacciones;
+    private List<Transacciones> transacciones;*/
 }
